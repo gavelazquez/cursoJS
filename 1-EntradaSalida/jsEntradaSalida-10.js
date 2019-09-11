@@ -8,9 +8,8 @@ function mostrarAumento() {
     var nuevoImporte;
 
     importe = parseFloat(document.getElementById("importe").value);
-    nuevoImporte = importe * -1.25;
-    //descuento = importe * 25 /100;
-    //nuevoImporte = importe - descuento;
+    descuento = importe * 25 /100;
+    nuevoImporte = importe - descuento;
 
     document.getElementById("resultado").value = nuevoImporte.toFixed(2);
 }
