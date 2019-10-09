@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="./js/index.js"></script>
+    <link rel="stylesheet" href="./css/index.css">
     <title>Document</title>
 </head>
 <body>
+    <div id="container">
     <form action="https://google.com.ar" method="" style = "width: 300px" id="frmPersona">
-     <!--esta es otr manera de asociar el label a la caja de texto pero no se debe utiliza
+    <!--esta es otr manera de asociar el label a la caja de texto pero no se debe utiliza
         <label>Nombre: 
         <input type="text" id = "txtEdad" name = "edad" placeholder="Ingrese su edad">
         </label>
@@ -25,22 +27,22 @@
                 <!--shortcut: tr*6>td*2 + tab-->
                 <tr>
                     <td><label for="txtNombre">Nombre: </label></td>
-                    <td><input type="text" id = "txtNombre" name = "nombre" placeholder="Ingrese su nombre" required></td>
+                    <td><input type="text" id = "txtNombre" name = "nombre" placeholder="Ingrese su nombre" required minlength="3"></td>
                 </tr>
                 <tr>
                     <td><label for="txtApellido">Apellido: </label></td>
                     <td><input type="text" id = "txtApellido" name = "apellido" placeholder="Ingrese su apellido"></td>
                 </tr>
                 <tr>
-                    <td><label>Nombre: </label></td>
-                    <td><input type="text" id = "txtEdad" name = "edad" placeholder="Ingrese su edad"></td>
+                    <td><label>Edad: </label></td>
+                    <td><input type="number" id = "txtEdad" name = "edad" placeholder="Ingrese su edad" min="18" max ="65" value="18"></td>
                 </tr>
                 <tr>
-                    <td><input type="radio" name="genero" id="rdoMasculino"></td>
+                    <td><input type="radio" name="genero" id="rdoMasculino" value="masculino"></td>
                     <td><label for="rdoMasculino">Masculino</label></td>
                 </tr>
                 <tr>
-                    <td><input type="radio" name="genero" id="rdoFemenino" checked></td>
+                    <td><input type="radio" name="genero" id="rdoFemenino" value="femenino" checked></td>
                     <td><label for="rdoFemenino">Femenino</label></td>
                 </tr>
                 <tr>
@@ -72,5 +74,70 @@
             </table>
     </fieldset>
     </form>
+    <form action="https://google.com.ar" method="" style = "width: 300px" id="frmPersona2">
+     <!--esta es otr manera de asociar el label a la caja de texto pero no se debe utiliza
+        <label>Nombre: 
+        <input type="text" id = "txtEdad" name = "edad" placeholder="Ingrese su edad">
+        </label>
+        si paso los datos por GET van en la url y se ven, si los envio por POST no se ven y van en la peticion
+        
+        Cuando voy a modificar los datos en el servidor, lo hago por POST,
+        de lo contrario lo hago por GET
+    
+    -->
+        <fieldset>
+            <legend>Datos Personales</legend>
+            <table>
+                <!--shortcut: tr*6>td*2 + tab-->
+                <tr>
+                    <td><label for="txtNombre2">Nombre: </label></td>
+                    <td><input type="text" id = "txtNombre2" name = "nombre" placeholder="Ingrese su nombre" required></td>
+                </tr>
+                <tr>
+                    <td><label for="txtApellido2">Apellido: </label></td>
+                    <td><input type="text" id = "txtApellido2" name = "apellido" placeholder="Ingrese su apellido"></td>
+                </tr>
+                <tr>
+                    <td><label>Nombre: </label></td>
+                    <td><input type="text" id = "txtEdad2" name = "edad" placeholder="Ingrese su edad"></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="genero" id="rdoMasculino2" value="masculino"></td>
+                    <td><label for="rdoMasculino2">Masculino</label></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="genero" id="rdoFemenino2" value="femenino" checked></td>
+                    <td><label for="rdoFemenino2">Femenino</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name = "maneja2" id= "chkManeja2"></td>
+                    <td><label for="chkManeja2">Maneja</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name = "nada2" id= "chkNada2"></td>
+                    <td><label for="chkNada2">Sabe nadar</label></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name = "bicicleta" id= "chkBici2"></td>
+                    <td><label for="chkBici2">Anda en bicilceta</label></td>
+                </tr>
+                <tr>
+                    <td><select name="pais" id="selPais2">
+                        <option value="ar">Argentina</option>
+                        <option value="br">Brasil</option>
+                        <option value="uy">Uruguay</option>
+                        <option value="py">Paraguay</option>
+                        <option value="cl">Chile</option>
+                    </select></td>
+                    <td><label for="selPais2">Pais</label></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Alta Persona"></td>
+                    <td></td>
+                </tr>
+            </table>
+    </fieldset>
+    </form>
+</div>
 </body>
 </html>
