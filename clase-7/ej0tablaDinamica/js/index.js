@@ -25,7 +25,11 @@ function crearTabla(arr){
     for (let i=0; i < arr.length;i++){ //con este for recorro el array de personas
         let fila = document.createElement('tr'); //para cada persona creo una fila
         for (prop in arr[i]){ //con este for in recorro los atributos de la persona
+            
             let celda = document.createElement('td'); //para cada atributo creo una celda
+            if(i%2){
+                celda.setAttribute('style', 'background: rgb(200,200,200)')
+            }
             celda.textContent= arr[i][prop]; //cargo en la celda el valor del atributo
             fila.appendChild(celda); //agrego la celda a la fila 
         }
