@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./personas.js"></script>
+
+    <title>Clase 8 - Ej2</title>
+</head>
+<body>
+
+    <script>
+        
+       console.log(personas);
+        /*console.log(personas.sort(function(a,b){
+            if (a.first_name > b.first_name){
+                return 1;
+            }
+            else{
+                return -1;
+                
+            }
+
+        }));*/
+
+        //console.log(personas[0].first_name.localeCompare(personas[1].first_name));
+        console.log(personas.sort(function(a,b){
+            let swap =1;
+            if (a.gender == b.gender && a.first_name.localeCompare(b.first_name)==-1)
+            {
+                swap=-1;
+            }
+            else if (a.gender > b.gender){
+                swap=-1;
+            }
+            return swap;
+        }));
+        
+
+    </script>
+</body>
+</html>

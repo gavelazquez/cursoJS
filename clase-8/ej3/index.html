@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./personas.js"></script>
+
+    <title>Clase 8 - Ej2</title>
+</head>
+<body>
+
+    <script>
+        
+        let numeros = [12, 1, 30, 10, 34, 100];
+        let nombres = ["Juan", "andrea","Zoilo", "Andrea", "Miguel"];
+        numeros.forEach(foo);
+
+        //me pasa por parametro cada elemento, su indice y todo el array:
+        function foo (a,b,c){
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+        console.log(numeros);
+        //normalmente haria esto:
+
+        /*for (let i=0;i<numeros-length;i++)
+        {
+            numeros[i]=2*numeros[i];
+        }*/
+
+        //esta es otra opcion para hacer lo mismo:
+
+        /*numeros.forEach(function(a, b){
+            numeros[b]= a * 2;
+        });*/
+
+        //otra
+        var dobles =[];
+        numeros.forEach(function(a, b){
+            dobles.push(a * 2);
+        });
+        console.log(dobles);
+        //esto se puede hacer de una mejor forma:
+        var cuadrados = numeros.map(function(a){
+            return a*a;
+        });
+        console.log(cuadrados);
+        //es lo mismo que esto:
+        //var cuadrados = numeros.map(a=>a*a);
+
+        let nombreGen = personas.map(function(a){
+            return {nombre: a.first_name, genero: a.gender};
+        });
+        console.log(nombreGen);
+        //map, reduce, filter: permiten formatear cualquier cadena de objetos
+
+                
+        //programacion funcional: utilizo funciones
+    </script>
+</body>
+</html>

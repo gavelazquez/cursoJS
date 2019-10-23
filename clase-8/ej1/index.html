@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./js/personas.js"></script>
+
+    <title>Clase 8</title>
+</head>
+<body>
+    <button id="click" value="1">1</button>
+    <button id="click2" value="2">2</button>
+    <script>
+        let numeros = [12, 1, 30, 10, 34, 100];
+        let nombres = ["Juan", "andrea","Zoilo", "Andrea", "Miguel"];
+        console.log(numeros.sort());
+        //console.log(nombres.sort());
+
+        console.log(numeros.sort(function(a,b){
+            return a-b;
+        }));
+
+        console.log(personas);
+        console.log(personas.sort(function(a,b){
+            if (a.first_name > b.first_name){
+                return 1;
+            }
+            else{
+                return -1;
+                
+            }
+
+        }));
+        //let boton = document.getElementById("click");
+
+       /* boton.addEventListener('click', function(e){
+            console.log("Hiciste click");
+            e.target.setAttribute('style', "background:red");
+        });
+*/
+     /*   let boton2 = document.getElementById("click2");
+        //boton.addEventListener('click', cambiarColor);
+       // boton2.addEventListener('click', cambiarColor);
+
+        boton.addEventListener('click', mostrarValor);
+        boton2.addEventListener('click', mostrarValor);
+
+        function cambiarColor(e){
+            e.target.setAttribute('style', "background:red");
+        }
+
+        function mostrarValor(e){
+            //console.log(e.target.textContent);
+            console.log(e.target.value);
+        }
+        */
+    </script>
+</body>
+</html>

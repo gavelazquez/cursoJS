@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./personas.js"></script>
+
+    <title>Clase 8 - Ej2</title>
+</head>
+<body>
+
+    <script>
+        
+        let numeros = [12, 1, 30, 10, 34, 100];
+        let nombres = ["Juan", "andrea","Zoilo", "Andrea", "Miguel"];
+        //se fija si alguno de los valores cumple la condicion dada:
+
+        /*console.log(nombres.some(function(a){
+            return a == 'Zoilo';
+        }));
+*/
+        //se fija si todos los valores cumplen la condicion dada:
+        console.log(numeros.every(function(a){
+                    return a % 2 == 0;
+                }));
+
+        //funcion filter (como el where de SQL):
+        //devuelve un nuevo array con la misma cantidad o menor de elementos
+        let pares = numeros.filter(function(a){
+            return a % 2 ==0;
+        });
+       // console.log(pares);
+
+       /* let varonesFilter =personas.filter(function(a){
+            return a.gender === 'Male';
+        });
+        */
+        //o sino mas simplificado:
+        let varonesFilter = personas.filter(a=> a.gender === 'Male');
+
+        //console.log(varonesFilter);
+
+        //chaining o encadenamiento de funciones:
+        let nombreMujeres = personas.filter(a=> a.gender === 'Female')
+                                .map(a=> a.first_name);
+        
+        console.log(nombreMujeres);
+    </script>
+</body>
+</html>

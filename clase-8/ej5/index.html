@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./personas.js"></script>
+
+    <title>Clase 8 - Ej2</title>
+</head>
+<body>
+
+    <script>
+        
+        let numeros = [2, 5, 7, 8, 10];
+        let nombres = ["Juan", "andrea","Zoilo", "Andrea", "Miguel"];
+        
+        /*let x = numeros.reduce(function(a,b,c,d){
+            console.log("Valor anterior: " + a);
+            console.log("Valor actual: " + b);
+          //  console.log(c);
+          //  console.log(d);
+            return a+b;
+        }, 0);
+        */
+        //console.log(x);
+        let x2 = numeros.reduce(function(a, b){
+            return a+b;
+        }, 0);
+
+        let x3 = numeros.reduce((a, b)=>a+b, 0);
+        //console.log(x3);
+
+        let cantNombres = nombres.reduce(function(ant, act){
+            console.log(act);
+            return ant+1;
+            
+        },0);//sino se pone el parametro cero se comienza desde el indice 1
+        //console.log(cantNombres);
+
+        //calculo el promedio de la edad de las mujeres
+        /*let promEdadFem = persona.filter(function(p){
+            return p.genero === 'Female';
+        })
+        .map(function(p){
+            return p.edad;
+        })
+        .reduce(function(ant, actual){
+            //console.log(ant, actual, indice, array);
+            return (ant + actual)/2;
+            
+        });
+*/
+        let promEdadFem = persona.filter(p=>p.genero === 'Female')
+        .map(p=>p.edad)
+        .reduce((ant, actual, indice, arr)=>ant + actual/arr.length, 0);
+
+        //console.log(promEdadFem.toFixed(2));
+        let vec =[2,3,7];
+        console.log(vec.reduce((ant, actual, indice, arr)=>ant + actual/arr.length, 0));
+    </script>
+</body>
+</html>
